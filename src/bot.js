@@ -22,5 +22,7 @@ for (const folder of functionFolders) {
 }
 
 client.handleEvents();
+
+//the client loads the commands
 client.handleCommands();
 client.login(token); //client.login(token1||token2)
