@@ -19,17 +19,16 @@ module.exports = (client) => {
     }
 
     const clientId='1105878851600519300';
+    const guildId = '755630204436611112';
     const rest = new REST().setToken(process.env.token);
 
     try {
       console.log(`Started refreshing application (/) commands.`);
-  
       // The put method is used to fully refresh all commands in the guild with the current set
       const data = await rest.put(
-        Routes.applicationCommands(clientId),
+        Routes.applicationGuildCommands(clientId, guildId),
         { body: client.commandArray, }
       );
-  
       console.log(`Successfully reloaded ${data.length} application (/) commands.`);
     } catch (error) {
       // And of course, make sure you catch and log any errors!
