@@ -1,6 +1,6 @@
 require("dotenv").config();
+require("dotenv").config();
 
-const openai = require("openai");
 const { token } = process.env;
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
@@ -22,7 +22,6 @@ for (const folder of functionFolders) {
   for (const file of functionFiles)
     require(`./functions/${folder}/${file}`)(client);
 }
-
 client.handleEvents();
 
 //the client loads the commands
